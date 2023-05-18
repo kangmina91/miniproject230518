@@ -5,7 +5,16 @@
     /* 가운데 오게 하는 공식 */
     padding: 0 15px;
     /* 양쪽에 15px씩 들어가 1170px 맞추는 용도 */
+}
 
+/* 시각장애인을 위한 대체 텍스트 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
 
 /* 메뉴 고정시키는 법 */
@@ -76,6 +85,38 @@
     background: #ddd;
 }
 
+@media (max-width: 768px) {
+
+    #header {
+        position: relative;
+        top: 50%;
+        left: 0;
+        transform: translate(0%, 50%);
+        /* background: #fff; */
+        z-index: 999;
+        margin: -100px 0 0 0;
+    }
+
+    #header .inner h1 a img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        /* 이미지 사이즈를 부모 요소에 맞추기 */
+        width: 300px;
+    }
+
+    #header .gnb {
+        display: none;
+    }
+
+
+    #header .search {
+        display: none;
+    }
+
+}
+
 #header .search {
     margin: 0 0 0 50px;
 }
@@ -87,6 +128,7 @@
 
 #mainVisual {
     padding: 100px 0 0 0;
+
 }
 
 #mainVisual .mainSlide figure {
@@ -106,14 +148,29 @@
     background: url(../images/sbg03.jpg) no-repeat center center/cover;
 }
 
+@media (max-width: 768px) {
+
+    #mainVisual .mainSlide .slogan {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 15px;
+    }
+
+}
+
 #mainVisual .mainSlide .slogan {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 15px;
 }
+
+
 
 #mainVisual .mainSlide .slogan strong {
     display: block;
@@ -190,7 +247,6 @@
 
 #mainContent {
     padding: 20px 0;
-    /* 가장  */
 }
 
 #mainContent .tit {
@@ -268,16 +324,22 @@
 }
 
 .footer {
-    background: #333;
+    background: #999;
     color: #fff;
-    text-align: center;
 }
 
 .footer .top {
-    line-height: 80px;
-    border-bottom: 1px solid #555;
+    line-height: 70px;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    font-size: 13px;
 }
 
 .footer address {
-    line-height: 80px;
+    line-height: 50px;
+    font-size: 13px;
+}
+
+.footer .footerLogo>img {
+    width: 20%;
 }
