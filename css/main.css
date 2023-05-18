@@ -1,0 +1,283 @@
+.inner {
+    max-width: 1200px;
+    /* 반응형 */
+    margin: 0 auto;
+    /* 가운데 오게 하는 공식 */
+    padding: 0 15px;
+    /* 양쪽에 15px씩 들어가 1170px 맞추는 용도 */
+
+}
+
+/* 메뉴 고정시키는 법 */
+#header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    /* background: #fff; */
+    z-index: 999;
+}
+
+
+#header .inner {
+    display: flex;
+    align-items: center;
+    /* 상하 중앙 */
+    height: 100px;
+}
+
+
+/* 메뉴를 고정하니 로고가 날아가서 고침 */
+#header .inner h1 a img {
+    position: fixed;
+    top: 20px;
+    left: -180px;
+    transform: translate(-100%, 0%);
+    width: 25%;
+    z-index: 999;
+}
+
+
+#header .gnb {
+    margin: 0 0 0 auto;
+}
+
+
+#header .gnb>ul {
+    display: flex;
+    /* 내가 가로 배치할 li요소의 부모인 ul에게 디스플레이 플렉스를 걸어준다 */
+    gap: 40px;
+    /* 메뉴 간 거리 유지 */
+    align-items: center;
+}
+
+/* 메뉴 사이 bar 만드는 법 */
+#header .gnb>ul>li {
+    position: relative;
+}
+
+#header .gnb>ul>li>a {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+#header .gnb>ul>li~li::before {
+    content: "";
+    position: absolute;
+    /* 포지션을 써도 박스가 된다 */
+    top: 50%;
+    left: -20px;
+    transform: translate(0%, -50%);
+    /* 중앙에 오는 공식 */
+    width: 1px;
+    height: 12px;
+    background: #ddd;
+}
+
+#header .search {
+    margin: 0 0 0 50px;
+}
+
+
+#header .search i {
+    font-size: 30px;
+}
+
+#mainVisual {
+    padding: 100px 0 0 0;
+}
+
+#mainVisual .mainSlide figure {
+    position: relative;
+    height: 600px;
+}
+
+#mainVisual .mainSlide .itm01 {
+    background: url(../images/sbg01.jpg) no-repeat center center/cover;
+}
+
+#mainVisual .mainSlide .itm02 {
+    background: url(../images/sbg02.jpg) no-repeat center center/cover;
+}
+
+#mainVisual .mainSlide .itm03 {
+    background: url(../images/sbg03.jpg) no-repeat center center/cover;
+}
+
+#mainVisual .mainSlide .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    padding: 0 15px;
+}
+
+#mainVisual .mainSlide .slogan strong {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+#mainVisual .mainSlide .slogan p {
+    margin: 0 0 30px 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+#mainVisual .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    border-left: 5px solid rgba(255, 255, 255, 0.5);
+    border-top: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+#mainVisual .slick-prev {
+    margin: 0 0 0 -700px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#mainVisual .slick-next {
+    margin: 0 0 0 700px;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+#mainVisual .slick-dots {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
+#mainVisual .slick-dots>* {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+#mainVisual .slick-dots li button {
+    color: #999;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20%;
+    padding: 5px;
+    font-size: 0px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+}
+
+#mainVisual .slick-dots li.slick-active button {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#mainContent {
+    padding: 20px 0;
+    /* 가장  */
+}
+
+#mainContent .tit {
+    margin: 40px auto 20px auto;
+}
+
+#mainContent .tit .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#mainContent .tit .box .left {
+    margin: 0 auto 10px auto;
+    border-bottom: 2px dotted #ddd;
+    width: 40%;
+}
+
+#mainContent .tit .box .right {
+    margin: 0 auto 10px auto;
+    border-bottom: 2px dotted #ddd;
+    width: 40%;
+}
+
+
+#mainContent .tit h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-align: center;
+    width: 20%;
+
+}
+
+#mainContent .tit p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#mainContent .content {
+    display: flex;
+    gap: 30px;
+}
+
+#mainContent .content figure {
+    flex: 1;
+    /* 한칸씩 차지해라 */
+    text-align: center;
+}
+
+#mainContent .content figure .box {
+    margin: 0 0 20px 0;
+}
+
+#mainContent .content figure strong {
+    display: block;
+    margin: 0 0 20px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#mainContent .content figure p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+#mainContent .content figure img {
+    width: 100%;
+    /* 이미지 사이즈를 부모 요소에 맞추기 */
+    object-fit: cover;
+    /* 이미지 찌그러지지 않게 사이즈 맞추기 */
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.footer .top {
+    line-height: 80px;
+    border-bottom: 1px solid #555;
+}
+
+.footer address {
+    line-height: 80px;
+}
